@@ -2,5 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
+html, body{
+  margin:0 60px ;
+}
