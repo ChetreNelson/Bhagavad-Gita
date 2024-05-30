@@ -1,6 +1,8 @@
 import Image from "next/image";
 import NavLink from "./navLink";
 import Logo from "../../public/logo.jpg";
+import Link from "next/link";
+
 
 const navLinks = [
   { url: "/", title: "Home" },
@@ -18,13 +20,14 @@ const NavBar = () => {
           ))}
         </div>
       </div>
-
-      <Image
-        className="rounded absolute top-0 right-28"
-        src={Logo}
-        width={200}
-        alt="Bhagavad Gita"
-      />
+      <Link href='/'>
+        <Image
+          className="rounded absolute top-0 right-28"
+          src={Logo}
+          width={200}
+          alt="Bhagavad Gita"
+        />
+      </Link>
     </>
   );
 };
