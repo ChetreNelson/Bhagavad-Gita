@@ -17,7 +17,7 @@ export default function Chat() {
         {
           id: Date.now().toString(),
           role: "system",
-          content: "You are an assistant that gives short answers.",
+          content: "You are an assistant that gives answer related to Bhgavad gita only.",
         },
       ],
     });
