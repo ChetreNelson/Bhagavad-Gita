@@ -61,7 +61,9 @@ const ChaptersInfo = () => {
         const resp = await fetch(`https://bhagavadgitaapi.in/${params}`);
         const result: ChapterInfo = await resp.json();
         setData(result);
-        setLoading(false);
+        if (result) {
+          setLoading(false);
+        }
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -97,19 +99,27 @@ const ChaptersInfo = () => {
         <p>Loading....</p>
       ) : (
         <div>
-          <div>
-            <h2>CHAPTER{data?.chapter_number}</h2>
-            <h1>{data?.translation}</h1>
-            <p>{data?.summary.en}</p>
+          <div className="flex p-4 border rounded-2xl justify-center items-center flex-col  shadow-lg  shadow-indigo-500/40  bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 ">
+            <h2 className="font-bold  flex gap-2  text-2xl text-purple-900">
+              CHAPTER
+              <span className="text-purple-600">{data?.chapter_number}</span>
+            </h2>
+            <h1 className="text-orange-600 font-medium pb-2 text-xl">
+              {data?.translation}
+            </h1>
+            <p className="text-justify text-gray-900">{data?.summary.en}</p>
           </div>
-          <div>
-            verses
+          <div className="mt-5">
             {verese.map((verse, index) => (
-              <div key={index}>
-                <h1>{verse.text}</h1>
-                <div>
-                  {verse?.translations[4].description}
-                </div>
+              <div
+                key={index}
+                className="flex p-4 border rounded-2xl   flex-col  shadow-lg gap-2 mb-2
+                  shadow-green-500/40  bg-gradient-to-r from-blue-100 via-red-100 to-green-50 "
+              >
+                <h1 className="font-semibold flex gap-2 flex-col  text-xl text-purple-900 items-end">
+                  {verse.text}
+                </h1>
+                <p className="text-justify">{verse.translations[5 as typeof index].description}</p>
               </div>
             ))}
           </div>

@@ -22,7 +22,7 @@ const NavBar = () => {
       </div>
       <Link href='/'>
         <Image
-          className="rounded absolute top-0 right-28"
+          className="rounded absolute top-0 right-[120px]"
           src={Logo}
           width={200}
           alt="Bhagavad Gita"
