@@ -38,8 +38,8 @@ interface VerseInfo {
   commentaries: [
     {
       author_name: string;
-      description:string;
-      id:number;
+      description: string;
+      id: number;
       language: string;
     }
   ];
@@ -51,10 +51,8 @@ const ChaptersInfo = () => {
   const [isLoading, setLoading] = useState<boolean>(false);
   const params = usePathname();
 
-
-console.log(params)
-const newParams=params?.split('/chapter')
-const neeVal = newParams?.splice(1, 1);
+  const newParams = params?.split("/chapter");
+  const neeVal = newParams?.splice(1, 1);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -75,10 +73,12 @@ const neeVal = newParams?.splice(1, 1);
       try {
         setLoading(true);
         const resp = await fetch(
-          `https://bhagavad-gita3.p.rapidapi.com/v2/chapters${neeVal}/verses/`,{
-            headers:{
-              'x-rapidapi-key':'6722d4f3e7mshc77fa4dac2ed142p10b809jsn859a3cb90a18'
-            }
+          `https://bhagavad-gita3.p.rapidapi.com/v2/chapters${neeVal}/verses/`,
+          {
+            headers: {
+              "x-rapidapi-key":
+                "6722d4f3e7mshc77fa4dac2ed142p10b809jsn859a3cb90a18",
+            },
           }
         );
         const result: VerseInfo[] = await resp.json();
@@ -90,7 +90,6 @@ const neeVal = newParams?.splice(1, 1);
     };
     fetchVerse();
   }, []);
-
 
   return (
     <>
@@ -105,21 +104,14 @@ const neeVal = newParams?.splice(1, 1);
           </div>
           <div>
             verses
-           {verese.map((verse,index)=>(
-           <div key={index}>
-              <h1>{verse.text}</h1>
-              <div>
-                {
-                  verse.translations.map((translation,index)=>(
-                    <p key={index}>
-                      
-                      
-                  </p>
-                  ))
-                }
+            {verese.map((verse, index) => (
+              <div key={index}>
+                <h1>{verse.text}</h1>
+                <div>
+                  {verse?.translations[4].description}
+                </div>
               </div>
-           </div>
-           ))}
+            ))}
           </div>
         </div>
       )}
