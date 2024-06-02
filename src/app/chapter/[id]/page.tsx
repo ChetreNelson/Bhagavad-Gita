@@ -61,9 +61,9 @@ const ChaptersInfo = () => {
         const resp = await fetch(`https://bhagavadgitaapi.in/${params}`);
         const result: ChapterInfo = await resp.json();
         setData(result);
-        if (result) {
-          setLoading(false);
-        }
+        // if (result) {
+        //   setLoading(false);
+        // }
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -73,7 +73,7 @@ const ChaptersInfo = () => {
   useEffect(() => {
     const fetchVerse = async () => {
       try {
-        setLoading(true);
+        // setLoading(true);
         const resp = await fetch(
           `https://bhagavad-gita3.p.rapidapi.com/v2/chapters${neeVal}/verses/`,
           {
