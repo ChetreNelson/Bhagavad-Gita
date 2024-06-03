@@ -1,5 +1,6 @@
 "use client";
 
+import Loader from "@/app/about/Loading";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
@@ -96,7 +97,9 @@ const ChaptersInfo = () => {
   return (
     <>
       {isLoading ? (
-        <p>Loading....</p>
+       <>
+       <Loader/>
+       </>
       ) : (
         <div>
           <div className="flex p-4 border rounded-2xl justify-center items-center flex-col  shadow-lg  shadow-indigo-500/40  bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 ">

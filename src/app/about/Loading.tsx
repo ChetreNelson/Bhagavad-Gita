@@ -1,30 +1,60 @@
-"use client"
+"use client";
 import Image from "next/image";
 import React from "react";
 import LordKrishnaImg from "../../../public/LordKrishna.png";
-import MusicTunes from "../../../public/musicNotes.png";
-import {easeInOut, motion} from "framer-motion"
-const Loading = () => {
+import { motion } from "framer-motion";
+import Notes from "./Notes";
+
+const notes = [
+  { fill: "#0eb567", width: 8, top: "58%", left: "44%" },
+  { fill: "#0c8891", width: 10, top: "55%", left: "40%" },
+  { fill: "#16527a", width: 20, top: "51%", left: "37%" },
+  { fill: "#0c1291", width: 30, top: "51.5%", left: "28%" },
+  { fill: "#510eb5", width: 40, top: "52%", left: "20%" },
+  { fill: "#7e0eb5", width: 45, top: "50%", left: "10%" },
+  { fill: "#b50eb2", width: 50, top: "42%", left: "5%" },
+  { fill: "#b50e75", width: 55, top: "30%", left: "0%" },
+];
+
+const noteVariants = {
+  initial: { opacity: 0, y: 20 },
+  animate: (i:number) => ({
+    opacity: [0, 1, 1, 0],
+    y: [20, 0, 0, -20],
+    transition: {
+      delay: i * 0.5,
+      duration: 2,
+      ease: "easeInOut",
+      repeat: Infinity,
+      repeatDelay: notes.length * 0.5,
+    },
+  }),
+};
+
+const Loader = () => {
   return (
-    <div className="flex w-full justify-center ">
-      <motion.div
-        // initial={{ opacity: 1 }}
-        // animate={{ opacity: 0 }}
-        // transition={{
-        //   duration: 3,
-        //   repeat: Infinity,
-        //   ease:easeInOut
-          
-        // }}
-        className="absolute left-28 rotate-12 scale-100 ease-in-out animate-accordion-up transition-all repeat-infinite duration-1000"
-      >
-        <Image src={MusicTunes} width={500} height={5} alt="krishna"></Image>
-      </motion.div>
-      <div className="relative">
-        <Image src={LordKrishnaImg} sizes="fill" alt="krishna"></Image>
+    <div className="flex w-full justify-around relative">
+      {/* Container for the image and notes */}
+      <div className="relative pl-60">
+        {notes.map((note, index) => (
+          <motion.div
+            key={index}
+            className={`absolute top-[${note.top}] left-[${note.left}] rotate-12`}
+            custom={index}
+            variants={noteVariants}
+            initial="initial"
+            animate="animate"
+          >
+            <Notes fill={note.fill} width={`${note.width}`} />
+          </motion.div>
+        ))}
+        {/* Image */}
+        <motion.div className="relative">
+          <Image src={LordKrishnaImg} sizes="fill" alt="krishna" />
+        </motion.div>
       </div>
     </div>
   );
 };
 
-export default Loading;
+export default Loader;
