@@ -1,10 +1,11 @@
+import Loading from "./Loading";
 
 const About = () => {
   return (
     <div>
-      about page
+      <Loading />
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;
