@@ -4,7 +4,7 @@ import Loading from "./Loading";
 const About = () => {
   return (
     <div >
-     <Loader/>
+     {/* <Loader/> */}
       this is about page
     </div>
   );
