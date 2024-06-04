@@ -1,9 +1,10 @@
+import Loader from "./Loading";
 import Loading from "./Loading";
 
 const About = () => {
   return (
     <div >
-      {/* <Loading /> */}
+     <Loader/>
       this is about page
     </div>
   );

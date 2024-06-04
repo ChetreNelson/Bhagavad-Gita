@@ -39,7 +39,12 @@ const Loader = () => {
         {notes.map((note, index) => (
           <motion.div
             key={index}
-            className={`absolute top-[${note.top}] left-[${note.left}] rotate-12`}
+            style={{
+              position: "absolute",
+              top: note.top,
+              left: note.left,
+              transform: "rotate(12deg)",
+            }}
             custom={index}
             variants={noteVariants}
             initial="initial"
