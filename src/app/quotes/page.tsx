@@ -1,21 +1,31 @@
-// import { getServerSideProps } from "next/dist/build/templates/pages";
-// import Loader from "../about/Loading";
-// import { ClientRequest } from "http";
+import { getQuotes } from "@/lib/quotes";
+import React from "react";
 
-// export const KrishnasQuotes = ({isConnected,quotes}) => {
-//   return (
-//     <div className="flex justify-between">
-//       <div>
-//         quotess
-//         </div>
-//       <div>
-//         <Loader />
-//       </div>
-//     </div>
-//   );
-// };
+interface Props {
+  _id: string;
+  id: number;
+  quote: string;
+}
 
-// export async function getServerSideProps(context){
-//   const client=await ClientRequest;
-//   const isConnected=await client.is
-// }
+
+const fetchQuotes = async () => {
+  const { quotes } = await getQuotes();
+  return quotes;
+};
+
+const page = async () => {
+  const quotes: Props[] = await fetchQuotes();
+
+  console.log("quotes", quotes);
+  console.log("heelelelel");
+  return (
+    <div>
+      <p>this is quote</p>
+      {quotes.map((item, index) => (
+        <p>{item.quote}</p>
+      ))}
+    </div>
+  );
+};
+
+export default page;
