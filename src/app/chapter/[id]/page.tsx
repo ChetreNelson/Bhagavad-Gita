@@ -1,6 +1,6 @@
 "use client";
 
-import Loader from "@/app/about/Loading";
+import Loader from "@/components/Loader/Loading";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
@@ -97,9 +97,9 @@ const ChaptersInfo = () => {
   return (
     <>
       {isLoading ? (
-       <>
-       <Loader/>
-       </>
+        <>
+          <Loader />
+        </>
       ) : (
         <div>
           <div className="flex p-4 border rounded-2xl justify-center items-center flex-col  shadow-lg  shadow-indigo-500/40  bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 ">
@@ -122,7 +122,9 @@ const ChaptersInfo = () => {
                 <h1 className="font-semibold flex gap-2 flex-col  text-xl text-purple-900 items-end">
                   {verse.text}
                 </h1>
-                <p className="text-justify">{verse.translations[5 as typeof index].description}</p>
+                <p className="text-justify">
+                  {verse.translations[5 as typeof index].description}
+                </p>
               </div>
             ))}
           </div>

@@ -1,13 +1,8 @@
-import Loader from "./Loading";
-import Loading from "./Loading";
+import Loader from "../../components/Loader/Loading";
+import Loading from "../../components/Loader/Loading";
 
 const About = () => {
-  return (
-    <div >
-     {/* <Loader/> */}
-      this is about page
-    </div>
-  );
+  return <div>this is about page</div>;
 };
 
 export default About;

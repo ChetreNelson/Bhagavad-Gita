@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import LordKrishnaImg from "../../../public/LordKrishna.png";
 import { motion } from "framer-motion";
-import Notes from "./Notes";
+import Notes from "../atoms/Notes";
 
 const notes = [
   { fill: "#0eb567", width: 8, top: "58%", left: "44%" },
@@ -18,7 +18,7 @@ const notes = [
 
 const noteVariants = {
   initial: { opacity: 0, y: 20 },
-  animate: (i:number) => ({
+  animate: (i: number) => ({
     opacity: [0, 1, 1, 0],
     y: [20, 0, 0, -20],
     transition: {

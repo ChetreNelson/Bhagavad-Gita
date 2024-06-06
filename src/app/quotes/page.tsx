@@ -1,5 +1,5 @@
 import { getRandomQuote } from "@/lib/quotes";
-import React from "react";
+
 
 interface Props {
   _id: string;
@@ -7,21 +7,21 @@ interface Props {
   quote: string;
 }
 
-
-const fetchQuotes = async () => {
-  const { quotes } = await getRandomQuote();
-  return quotes;
-};
-
 const page = async () => {
+  const fetchQuotes = async () => {
+    try {
+      const { quotes } = await getRandomQuote();
+      return quotes;
+    } catch (error) {
+      console.error("Failed to fetch quotes:", error);
+    } 
+  };
+
   const quotes: Props = await fetchQuotes();
-
-  console.log("quotes", quotes);
-
   return (
     <div>
       <p>this is quote</p>
-     {quotes.quote}
+      {quotes.quote}
     </div>
   );
 };

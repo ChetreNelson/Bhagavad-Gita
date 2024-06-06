@@ -18,10 +18,6 @@ export async function POST(req: Request) {
       stream: true,
       messages,
     });
-
-    // Deduct credits
-   
-
     const stream = OpenAIStream(response);
     return new StreamingTextResponse(stream);
   } catch (error: any) {
