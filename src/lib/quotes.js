@@ -1,33 +1,31 @@
 import clientPromise from "./mongodb";
-// let client;
+
 let db;
-let quotes;
 const init = async () => {
   try {
     const client = await clientPromise;
-    console.log("clieeent", client);
     db = client.db("BhagavadQuotes");
-    console.log("Database:", db);
-    quotes = await db.collection("quotes").find({}).toArray();
-    console.log("incomming", quotes);
-    // res.json(quotes);
   } catch (e) {
     console.error(e);
   }
 };
-(async () => {
-  console.log("abc", clientPromise);
-  await init();
 
-  console.log("heelelelel");
+(async () => {
+  await init();
 })();
 
-export const getQuotes = async () => {
+export const getRandomQuote = async () => {
   try {
-    if (!quotes) await init();
-    const result = await quotes;
-    return { quotes: result };
+    if (!db) await init();
+    // Use aggregation pipeline with $sample to fetch one random quote
+    const pipeline = [{ $sample: { size: 1 } }];
+    const randomQuote = await db
+      .collection("quotes")
+      .aggregate(pipeline)
+      .toArray();
+    return { quotes: randomQuote[0] };
   } catch (error) {
+    console.error("Failed to fetch quote:", error);
     return {
       error: "Failed to fetch",
     };

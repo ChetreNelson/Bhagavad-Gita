@@ -1,9 +1,9 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { getQuotes } from "../../lib/quotes";
+import { getRandomQuote } from "../../lib/quotes";
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "GET") {
     try {
-      const { error, quotes } = await getQuotes();
+      const { error, quotes } = await getRandomQuote();
       if (error) throw new Error(error);
       return res.status(200).json({ quotes });
     } catch (error) {
