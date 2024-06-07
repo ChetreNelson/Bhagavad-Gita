@@ -52,15 +52,14 @@ const Test = () => {
         </h1>
       </div> */}
       <div className="grid grid-cols-3 place-items-center gap-y-40">
-        <div className="relative w-[190px] h-auto cursor-pointer transition-transform duration-200 hover:scale-104 hover:rotate-1">
+        <div className="relative w-[190px] h-auto cursor-pointer transition-transform duration-200 hover:scale-105 hover:rotate-1">
           <div className=" absolute top-[-25px] left-[-25px] w-[100px] h-[100px] bg-gradient-to-br from-indigo-400 to-blue-200 rounded-full animate-move-up6"></div>
           <div className=" absolute bottom-[-25px] right-[-25px] w-[100px] h-[100px] bg-gradient-to-br from-green-400 to-green-600 rounded-full animate-move-down1"></div>
-          <div className="w-full relative h-full  shadow-card backdrop-blur-[10px] rounded-[8px]">
+          <div className="w-full relative h-full b  shadow-card backdrop-blur-[10px] rounded-[8px]">
             <Image src={IncidentImage} alt="image" />
            <p>
-            heheh<br/>
-            heheh<br/>
-            heheh<br/>
+            Krishna<br/>
+          God of gods
            </p>
           </div>
         </div>

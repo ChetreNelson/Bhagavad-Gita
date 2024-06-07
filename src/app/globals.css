@@ -93,10 +93,10 @@ html, body{
   }
   @layer components {
   .animate-move-up6 {
-    animation: move-up6 2s ease-in infinite alternate-reverse;
+    animation: move-up6 1s ease-in infinite alternate-reverse;
   }
   .animate-move-down1 {
-    animation: move-down1 2s ease-in infinite alternate-reverse;
+    animation: move-down1 1s ease-in infinite alternate-reverse;
   }
 }
 
