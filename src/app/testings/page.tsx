@@ -58,7 +58,7 @@ const Test = () => {
           <div className="w-full relative h-full b  shadow-card backdrop-blur-[10px] rounded-[8px]">
             <Image src={IncidentImage} alt="image" />
            <p>
-            Krishna<br/>
+            Krishna Image<br/>
           God of gods
            </p>
           </div>
