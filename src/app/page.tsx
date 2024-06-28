@@ -32,7 +32,7 @@ const Home = async () => {
   return (
     <div className="grid grid-cols-2 gap-4 my-10">
       {data?.map((rep, index) => (
-        <Link as={`/chapter/${rep.chapter_number}`} href="/chapter">
+        <Link key={index} as={`/chapter/${rep.chapter_number}`} href="/chapter">
           <div
             key={index}
             className="flex p-4 border rounded-2xl flex-col shadow-lg  shadow-indigo-500/40  bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 "
