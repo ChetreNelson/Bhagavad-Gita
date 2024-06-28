@@ -1,5 +1,5 @@
+import Loader from "@/components/Loader/Loading";
 import { getRandomQuote } from "@/lib/quotes";
-
 
 interface Props {
   _id: string;
@@ -14,14 +14,14 @@ const page = async () => {
       return quotes;
     } catch (error) {
       console.error("Failed to fetch quotes:", error);
-    } 
+    }
   };
 
   const quotes: Props = await fetchQuotes();
   return (
-    <div>
-      <p>this is quote</p>
-      {quotes.quote}
+    <div className="flex">
+      <span>{quotes.quote}</span>
+      <Loader/>
     </div>
   );
 };
