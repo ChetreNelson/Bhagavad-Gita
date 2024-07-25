@@ -48,12 +48,16 @@ interface VerseInfo {
 
 const ChaptersInfo = () => {
   const [data, setData] = useState<ChapterInfo>();
+
   const [verese, setVerse] = useState<VerseInfo[]>([]);
   const [isLoading, setLoading] = useState<boolean>(false);
   const params = usePathname();
 
   const newParams = params?.split("/chapter");
   const neeVal = newParams?.splice(1, 1);
+  const stringValue = neeVal[0];
+
+  const extractedValue = stringValue.replace("/", "");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -105,7 +109,7 @@ const ChaptersInfo = () => {
           <div className="flex p-4 border rounded-2xl justify-center items-center flex-col  shadow-lg  shadow-indigo-500/40  bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 ">
             <h2 className="font-bold  flex gap-2  text-2xl text-purple-900">
               CHAPTER
-              <span className="text-purple-600">{data?.chapter_number}</span>
+              <span className="text-purple-600">{extractedValue}</span>
             </h2>
             <h1 className="text-orange-600 font-medium pb-2 text-xl">
               {data?.translation}
