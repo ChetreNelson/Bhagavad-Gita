@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+<h1>Bhagavad Gita Project</h1>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<p>This project is a web application built using Next.js and MongoDB. It focuses on the Bhagavad Gita, an important Hindu scripture.</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<h2>Technologies Used</h2>
+<ul>
+    <li><strong>Next.js</strong>: A React framework for building server-side rendered applications.</li>
+    <li><strong>MongoDB</strong>: A NoSQL database for storing data.</li>
+</ul>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<h2>Project Overview</h2>
+<p>The Bhagavad Gita project aims to provide users with access to the Bhagavad Gita text. It includes features such as:</p>
+<ul>
+    <li>Viewing verses</li>
+    <li>Searching for specific verses or chapters</li>
+</ul>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<h2>Getting Started</h2>
 
-## Learn More
+<h3>Prerequisites</h3>
+<p>Make sure you have the following installed:</p>
+<ul>
+    <li>Node.js</li>
+    <li>MongoDB</li>
+</ul>
 
-To learn more about Next.js, take a look at the following resources:
+<h3>Installation</h3>
+<ol>
+    <li>Clone the repository:
+        <pre><code>git clone https://github.com/yourusername/bhagavadgita.git</code></pre>
+    </li>
+    <li>Change to the project directory:
+        <pre><code>cd bhagavadgita</code></pre>
+    </li>
+    <li>Install the dependencies:
+        <pre><code>npm install</code></pre>
+    </li>
+    <li>Start MongoDB:
+        <pre><code>mongod</code></pre>
+    </li>
+    <li>Create a <code>.env</code> file in the root directory and add your MongoDB connection string:
+        <pre><code>MONGODB_URI=your_mongodb_connection_string</code></pre>
+    </li>
+    <li>Run the development server:
+        <pre><code>npm run dev</code></pre>
+    </li>
+    <li>Open your browser and go to <a href="http://localhost:3000">http://localhost:3000</a> to see the app.</li>
+</ol>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<h2>Features</h2>
+<ul>
+    <li><strong>View Verses</strong>: Browse through the Bhagavad Gita verses.</li>
+    <li><strong>Search</strong>: Find specific verses or chapters.</li>
+    <li><strong>Favorites</strong>: Save your favorite verses for quick access.</li>
+</ul>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<h2>License</h2>
+<p>This project is licensed under the MIT License.</p>
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
